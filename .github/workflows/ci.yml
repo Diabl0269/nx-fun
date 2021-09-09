@@ -35,22 +35,22 @@ jobs:
 
       - name: Stop agents
         run: npx nx-cloud stop-all-agents
+    
+  agents: 
+    runs-on: ubuntu-latest
+    name: Agent
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        agent: [1,2]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      
+      - name: Install dependencies
+        run: npm i
 
-    agents: 
-      runs-on: ubuntu-latest
-      name: Agent
-      timeout-minutes: 10
-      strategy:
-        matrix:
-          agent: [1,2]
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
-          with:
-            node-version: "14"
-        
-        - name: Install dependencies
-          run: npm i
-
-        - name: Start NX agent ${{ matrix.agent }}
-          run: npx nx-cloud start-agent
+      - name: Start NX agent ${{ matrix.agent }}
+        run: npx nx-cloud start-agent
