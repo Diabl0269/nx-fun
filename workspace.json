@@ -1,7 +1,186 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "demo": {
+      "root": "packages/demo",
+      "sourceRoot": "packages/demo",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "root": "packages/demo",
+            "outputPath": "dist/packages/demo"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "demo:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "demo:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "demo:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/demo"
+          ],
+          "options": {
+            "jestConfig": "packages/demo/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/demo/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": false
+          }
+        }
+      }
+    },
+    "demo-e2e": {
+      "root": "packages/demo-e2e",
+      "sourceRoot": "packages/demo-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/demo-e2e/cypress.json",
+            "devServerTarget": "demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/demo-e2e/**/*.{js,ts}"
+            ]
+          }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": false
+          }
+        }
+      }
+    },
+    "shared-bg-button": {
+      "root": "packages/shared/bg-button",
+      "sourceRoot": "packages/shared/bg-button/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/shared/bg-button",
+            "tsConfig": "packages/shared/bg-button/tsconfig.lib.json",
+            "project": "packages/shared/bg-button/package.json",
+            "entryFile": "packages/shared/bg-button/src/index.ts",
+            "external": [
+              "react/jsx-runtime"
+            ],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "packages/shared/bg-button/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/shared/bg-button/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/shared/bg-button"
+          ],
+          "options": {
+            "jestConfig": "packages/shared/bg-button/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": false
+          }
+        },
+        "deploy": {
+          "executor": "ngx-deploy-npm:deploy",
+          "options": {
+            "access": "public"
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
   }
 }
