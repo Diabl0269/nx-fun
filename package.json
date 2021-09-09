@@ -5,9 +5,9 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
-    "@angular-devkit/architect": "^0.1202.5",
-    "@angular-devkit/core": "^12.2.5",
-    "@angular-devkit/schematics": "^12.2.5",
+    "@angular-devkit/architect": "0.1202.5",
+    "@angular-devkit/core": "12.2.5",
+    "@angular-devkit/schematics": "12.2.5",
     "@jscutlery/semver": "2.7.0",
     "@nrwl/cli": "12.9.0",
     "@nrwl/cypress": "12.9.0",
