@@ -10,7 +10,7 @@ export function BgButton(props: BgButtonProps) {
         backgroundColor: color,
       }}
     >
-      <h1>Welcome to SharedBgButton!!!</h1>
+      Welcome to SharedBgButton, this time from a feature branch!!!
     </button>
   );
 }
