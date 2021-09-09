@@ -26,7 +26,7 @@ jobs:
           node-version: '14'
 
       - name: Setup git user
-          run: git config --global user.email talefronny@gmail.com && git config --global user.name diabl0269
+        run: git config --global user.email talefronny@gmail.com && git config --global user.name diabl0269
 
 
       - name: Install dependencies
