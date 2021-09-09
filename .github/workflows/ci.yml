@@ -110,16 +110,16 @@ jobs:
         run: npm ci
 
       - name: Test
-        run: npx nx affected:test --parallel --max-parallel=3
+        run: npx nx affected:test --parallel --max-parallel=3 --base=origin/master
 
       - name: Lint
-        run: npx nx affected:lint --parallel --max-parallel=3
+        run: npx nx affected:lint --parallel --max-parallel=3 --base=origin/master
 
       - name: E2E tests
-        run: npx nx affected:e2e --parallel --max-parallel=3
+        run: npx nx affected:e2e --parallel --max-parallel=3 --base=origin/master
       
       - name: Build
-        run: npx nx affected:build --parallel --max-parallel=3 --prod
+        run: npx nx affected:build --parallel --max-parallel=3 --base=origin/master --prod
 
       - name: Stop agents
         if: ${{ always() }}
