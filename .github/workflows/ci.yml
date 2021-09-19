@@ -47,7 +47,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
+        
+      - run: npx nx-cloud start-ci-run
+      
       - name: Test
         run: npx nx affected:test --parallel --max-parallel=3
 
@@ -110,6 +112,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - run: npx nx-cloud start-ci-run
 
       - name: Test
         run: npx nx affected:test --parallel --max-parallel=3 --base=origin/master
