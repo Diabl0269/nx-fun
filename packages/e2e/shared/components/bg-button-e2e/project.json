@@ -1,0 +1,30 @@
+{
+  "root": "packages/e2e/shared/components/bg-button-e2e",
+  "sourceRoot": "packages/e2e/shared/components/bg-button-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/e2e/shared/components/bg-button-e2e/cypress.json",
+        "devServerTarget": "shared-bg-button:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "shared-bg-button:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/e2e/shared/components/bg-button-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["shared-bg-button"]
+}

@@ -8,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "root": "packages/demo",
             "outputPath": "dist/packages/demo"
@@ -40,9 +38,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/demo"
-          ],
+          "outputs": ["coverage/packages/demo"],
           "options": {
             "jestConfig": "packages/demo/jest.config.js",
             "passWithNoTests": true
@@ -50,13 +46,9 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "packages/demo/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["packages/demo/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "version": {
@@ -86,13 +78,9 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "packages/demo-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["packages/demo-e2e/**/*.{js,ts}"]
           }
         },
         "version": {
@@ -103,6 +91,7 @@
         }
       }
     },
+    "e2e-shared-components-bg-button-e2e": "packages/e2e/shared/components/bg-button-e2e",
     "shared-bg-button": {
       "root": "packages/shared/bg-button",
       "sourceRoot": "packages/shared/bg-button/src",
@@ -110,17 +99,13 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/shared/bg-button",
             "tsConfig": "packages/shared/bg-button/tsconfig.lib.json",
             "project": "packages/shared/bg-button/package.json",
             "entryFile": "packages/shared/bg-button/src/index.ts",
-            "external": [
-              "react/jsx-runtime"
-            ],
+            "external": ["react/jsx-runtime"],
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
               {
@@ -133,9 +118,7 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": [
               "packages/shared/bg-button/**/*.{ts,tsx,js,jsx}"
@@ -144,9 +127,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/shared/bg-button"
-          ],
+          "outputs": ["coverage/packages/shared/bg-button"],
           "options": {
             "jestConfig": "packages/shared/bg-button/jest.config.js",
             "passWithNoTests": true
@@ -162,6 +143,37 @@
           "executor": "ngx-deploy-npm:deploy",
           "options": {
             "access": "public"
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "packages/shared/bg-button/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/shared-bg-button",
+            "config": {
+              "configFolder": "packages/shared/bg-button/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       }
