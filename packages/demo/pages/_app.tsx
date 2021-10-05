@@ -1,12 +1,12 @@
-import { ThemeProvider } from '@perimeter_81/theme-provider';
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import { BgButton } from '@tal-test/bg-button';
-import './styles.css';
+// import { ThemeProvider } from '@perimeter_81/theme-provider';
+import { AppProps } from "next/app";
+import Head from "next/head";
+import { BgButton } from "@tal-test/bg-button";
+import "./styles.css";
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
+    // <ThemeProvider>
       <>
         <Head>
           <title>Welcome to demo!</title>
@@ -24,8 +24,8 @@ function CustomApp({ Component, pageProps }: AppProps) {
           </header>
           <main
             style={{
-              display: 'flex',
-              flexDirection: 'column',
+              display: "flex",
+              flexDirection: "column"
             }}
           >
             <BgButton color="blue" />
@@ -33,7 +33,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           </main>
         </div>
       </>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
 
