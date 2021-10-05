@@ -92,6 +92,16 @@
       }
     },
     "e2e-shared-components-bg-button-e2e": "packages/e2e/shared/components/bg-button-e2e",
+    "e2e-shared-components-test-e2e": "packages/e2e/shared/components/test-e2e",
+    "e2e-shared-components-test10-e2e": "packages/e2e/shared/components/test10-e2e",
+    "e2e-shared-components-test2-e2e": "packages/e2e/shared/components/test2-e2e",
+    "e2e-shared-components-test3-e2e": "packages/e2e/shared/components/test3-e2e",
+    "e2e-shared-components-test4-e2e": "packages/e2e/shared/components/test4-e2e",
+    "e2e-shared-components-test5-e2e": "packages/e2e/shared/components/test5-e2e",
+    "e2e-shared-components-test6-e2e": "packages/e2e/shared/components/test6-e2e",
+    "e2e-shared-components-test7-e2e": "packages/e2e/shared/components/test7-e2e",
+    "e2e-shared-components-test8-e2e": "packages/e2e/shared/components/test8-e2e",
+    "e2e-shared-components-test9-e2e": "packages/e2e/shared/components/test9-e2e",
     "shared-bg-button": {
       "root": "packages/shared/bg-button",
       "sourceRoot": "packages/shared/bg-button/src",
@@ -177,7 +187,17 @@
           }
         }
       }
-    }
+    },
+    "shared-components-test": "packages/shared/components/test",
+    "shared-components-test10": "packages/shared/components/test10",
+    "shared-components-test2": "packages/shared/components/test2",
+    "shared-components-test3": "packages/shared/components/test3",
+    "shared-components-test4": "packages/shared/components/test4",
+    "shared-components-test5": "packages/shared/components/test5",
+    "shared-components-test6": "packages/shared/components/test6",
+    "shared-components-test7": "packages/shared/components/test7",
+    "shared-components-test8": "packages/shared/components/test8",
+    "shared-components-test9": "packages/shared/components/test9"
   },
   "cli": {
     "defaultCollection": "@nrwl/next"

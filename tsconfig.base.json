@@ -15,7 +15,49 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tal-test/bg-button": ["packages/shared/bg-button/src/index.ts"]
+      "@material-ui/core": [
+        "./node_modules/@perimeter_81/theme-provider/lib",
+        "./node_modules/@material-ui/core"
+      ],
+      "@material-ui/core/*": [
+        "./node_modules/@perimeter_81/theme-provider/lib/*",
+        "./libs/shared/components/theme-provider/src/*",
+        "./node_modules/@material-ui/core/*"
+      ],
+      "@perimeter_81/dropdown-menu": [
+        "node_modules/@perimeter_81/dropdown-menu"
+      ],
+      "@tal-test/bg-button": ["packages/shared/bg-button/src/index.ts"],
+      "@tal-test/shared/components/test": [
+        "packages/shared/components/test/src/index.ts"
+      ],
+      "@tal-test/shared/components/test10": [
+        "packages/shared/components/test10/src/index.ts"
+      ],
+      "@tal-test/shared/components/test2": [
+        "packages/shared/components/test2/src/index.ts"
+      ],
+      "@tal-test/shared/components/test3": [
+        "packages/shared/components/test3/src/index.ts"
+      ],
+      "@tal-test/shared/components/test4": [
+        "packages/shared/components/test4/src/index.ts"
+      ],
+      "@tal-test/shared/components/test5": [
+        "packages/shared/components/test5/src/index.ts"
+      ],
+      "@tal-test/shared/components/test6": [
+        "packages/shared/components/test6/src/index.ts"
+      ],
+      "@tal-test/shared/components/test7": [
+        "packages/shared/components/test7/src/index.ts"
+      ],
+      "@tal-test/shared/components/test8": [
+        "packages/shared/components/test8/src/index.ts"
+      ],
+      "@tal-test/shared/components/test9": [
+        "packages/shared/components/test9/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

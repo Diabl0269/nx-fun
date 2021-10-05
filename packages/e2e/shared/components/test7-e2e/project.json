@@ -1,0 +1,30 @@
+{
+  "root": "packages/e2e/shared/components/test7-e2e",
+  "sourceRoot": "packages/e2e/shared/components/test7-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/e2e/shared/components/test7-e2e/cypress.json",
+        "devServerTarget": "shared-components-test7:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "shared-components-test7:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/e2e/shared/components/test7-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["shared-components-test7"]
+}
