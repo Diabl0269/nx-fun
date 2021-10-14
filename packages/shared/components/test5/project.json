@@ -1,0 +1,93 @@
+{
+  "root": "packages/shared/components/test5",
+  "sourceRoot": "packages/shared/components/test5/src",
+  "projectType": "library",
+  "tags": [
+    "client"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:package",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/shared/components/test5",
+        "tsConfig": "packages/shared/components/test5/tsconfig.lib.json",
+        "project": "packages/shared/components/test5/package.json",
+        "entryFile": "packages/shared/components/test5/src/index.ts",
+        "external": [
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "packages/shared/components/test5/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shared/components/test5/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/shared/components/test5"
+      ],
+      "options": {
+        "jestConfig": "packages/shared/components/test5/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "packages/shared/components/test5/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/shared-components-test5",
+        "config": {
+          "configFolder": "packages/shared/components/test5/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "syncVersions": false
+      }
+    }
+  }
+}

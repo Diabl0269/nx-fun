@@ -1,0 +1,40 @@
+{
+  "root": "packages/e2e/shared/components/test4-e2e",
+  "sourceRoot": "packages/e2e/shared/components/test4-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/e2e/shared/components/test4-e2e/cypress.json",
+        "devServerTarget": "shared-components-test4:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "shared-components-test4:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/e2e/shared/components/test4-e2e/**/*.{js,ts}"
+        ]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "syncVersions": false
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": [
+    "shared-components-test4"
+  ]
+}

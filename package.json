@@ -13,7 +13,7 @@
     "@angular-devkit/schematics": "12.2.5",
     "@babel/core": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
-    "@jscutlery/semver": "2.7.0",
+    "@jscutlery/semver": "2.8.1",
     "@nrwl/cli": "12.9.0",
     "@nrwl/cypress": "12.9.0",
     "@nrwl/eslint-plugin-nx": "12.9.0",
@@ -58,10 +58,13 @@
     "url-loader": "^3.0.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "core-js": "3.17.3",
+    "lodash": "4.17.21",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-svg": "^14.0.11",
     "regenerator-runtime": "0.13.7",
     "tslib": "2.3.1"
   }

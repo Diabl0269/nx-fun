@@ -1,6 +1,31 @@
+import react from "react";
+// import { Select } from "@perimeter_81/select";
+// import { SearchField } from "@perimeter_81/search-field";
+import { useTheme } from "@material-ui/core";
+
 import styles from "./index.module.scss";
+// console.log('mui', mui === mui2);
+// const args = {
+//   // multiple: true,
+//   menuContentProps: {
+//     search: true,
+//     listItems: [
+//       { name: "Ini", selected: false },
+//       { name: "Mini", selected: false },
+//       { name: "Miny", selected: false },
+//       { name: "Mo", selected: false },
+//       { name: "Test1", selected: false },
+//       { name: "Test2", selected: false },
+//       { name: "Test4", selected: false }
+//     ],
+//     handleClick: () => {}
+//   },
+//   placeholder: "Placeholder"
+// };
 
 export function Index() {
+  const theme = useTheme();
+  console.log("theme", theme);
   /*
    * Replace the elements below with your own.
    *
@@ -8,8 +33,14 @@ export function Index() {
    */
   return (
     <div className={styles.page}>
+      <div style={{
+        padding: "32px"
+      }}>
+      {/* <SearchField /> */}
+      </div>
       <h2>Resources &amp; Tools</h2>
       <p>Thank you for using and showing some ♥ for Nx.</p>
+      {/* <Select {...args} /> */}
       <div className="flex github-star-container">
         <a
           href="https://github.com/nrwl/nx"

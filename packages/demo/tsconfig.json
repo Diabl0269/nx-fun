@@ -11,6 +11,16 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true
+    // "paths": {
+    //   "@material-ui/core": [
+    //     "./libs/shared/components/theme-provider/src",
+    //     "./node_modules/@material-ui/core"
+    //   ],
+    //   "@material-ui/core/*": [
+    //     "./libs/shared/components/theme-provider/src/*",
+    //     "./node_modules/@material-ui/core/*"
+    //   ],
+    // }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
   "exclude": ["node_modules"]
