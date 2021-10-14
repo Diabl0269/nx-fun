@@ -6,7 +6,9 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "packages/shared/components/test/**/*.{ts,tsx,js,jsx}"
@@ -15,7 +17,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/shared/components/test"],
+      "outputs": [
+        "coverage/packages/shared/components/test"
+      ],
       "options": {
         "jestConfig": "packages/shared/components/test/jest.config.js",
         "passWithNoTests": true
@@ -38,7 +42,9 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "uiFramework": "@storybook/react",
         "outputPath": "dist/storybook/shared-components-test",
@@ -50,6 +56,12 @@
         "ci": {
           "quiet": true
         }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "syncVersions": false
       }
     }
   }

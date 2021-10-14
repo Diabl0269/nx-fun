@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "npm-publish": {
+      "implementation": "./impl",
+      "schema": "./schema.json",
+      "description": "Publish npm package"
+    }
+  }
+}

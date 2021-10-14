@@ -185,6 +185,12 @@
               "quiet": true
             }
           }
+        },
+        "npm-publish": {
+          "executor": "./tools/executors/npm-publish:npm-publish",
+          "options": {
+            "textToEcho": "Hello World"
+          }
         }
       }
     },
